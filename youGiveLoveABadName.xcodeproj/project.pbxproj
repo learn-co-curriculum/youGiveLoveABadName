@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73636A5999681D4E4335EC1 /* libPods-youGiveLoveABadNameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B02A47DBBE5EBAF58E907241 /* libPods-youGiveLoveABadNameTests.a */; };
 		D81E9F69196D7D2C00FFD46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E9F68196D7D2C00FFD46B /* Foundation.framework */; };
 		D81E9F6B196D7D2C00FFD46B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E9F6A196D7D2C00FFD46B /* CoreGraphics.framework */; };
 		D81E9F6D196D7D2C00FFD46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E9F6C196D7D2C00FFD46B /* UIKit.framework */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06A525CBC51DAC0A1E72F072 /* Pods-youGiveLoveABadNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youGiveLoveABadNameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-youGiveLoveABadNameTests/Pods-youGiveLoveABadNameTests.release.xcconfig"; sourceTree = "<group>"; };
+		B02A47DBBE5EBAF58E907241 /* libPods-youGiveLoveABadNameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youGiveLoveABadNameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B120F5E6FCFB260209B69CAD /* Pods-youGiveLoveABadNameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youGiveLoveABadNameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youGiveLoveABadNameTests/Pods-youGiveLoveABadNameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D81E9F65196D7D2C00FFD46B /* youGiveLoveABadName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youGiveLoveABadName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81E9F68196D7D2C00FFD46B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D81E9F6A196D7D2C00FFD46B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +79,7 @@
 				D81E9F88196D7D2C00FFD46B /* XCTest.framework in Frameworks */,
 				D81E9F8A196D7D2C00FFD46B /* UIKit.framework in Frameworks */,
 				D81E9F89196D7D2C00FFD46B /* Foundation.framework in Frameworks */,
+				B73636A5999681D4E4335EC1 /* libPods-youGiveLoveABadNameTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 				D81E9F8D196D7D2C00FFD46B /* youGiveLoveABadNameTests */,
 				D81E9F67196D7D2C00FFD46B /* Frameworks */,
 				D81E9F66196D7D2C00FFD46B /* Products */,
+				FCC2D4F1C04A60F1657A999B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +113,7 @@
 				D81E9F6A196D7D2C00FFD46B /* CoreGraphics.framework */,
 				D81E9F6C196D7D2C00FFD46B /* UIKit.framework */,
 				D81E9F87196D7D2C00FFD46B /* XCTest.framework */,
+				B02A47DBBE5EBAF58E907241 /* libPods-youGiveLoveABadNameTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +162,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FCC2D4F1C04A60F1657A999B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B120F5E6FCFB260209B69CAD /* Pods-youGiveLoveABadNameTests.debug.xcconfig */,
+				06A525CBC51DAC0A1E72F072 /* Pods-youGiveLoveABadNameTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D81E9F9A196D7D2C00FFD46B /* Build configuration list for PBXNativeTarget "youGiveLoveABadNameTests" */;
 			buildPhases = (
+				2B716207A32E54979D39479E /* Check Pods Manifest.lock */,
 				D81E9F82196D7D2C00FFD46B /* Sources */,
 				D81E9F83196D7D2C00FFD46B /* Frameworks */,
 				D81E9F84196D7D2C00FFD46B /* Resources */,
+				5A981C6E3FA988D0A7529369 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +266,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B716207A32E54979D39479E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A981C6E3FA988D0A7529369 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-youGiveLoveABadNameTests/Pods-youGiveLoveABadNameTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D81E9F61196D7D2C00FFD46B /* Sources */ = {
@@ -404,6 +455,7 @@
 		};
 		D81E9F9B196D7D2C00FFD46B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B120F5E6FCFB260209B69CAD /* Pods-youGiveLoveABadNameTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/youGiveLoveABadName.app/youGiveLoveABadName";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -426,6 +478,7 @@
 		};
 		D81E9F9C196D7D2C00FFD46B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A525CBC51DAC0A1E72F072 /* Pods-youGiveLoveABadNameTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/youGiveLoveABadName.app/youGiveLoveABadName";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -461,6 +514,7 @@
 				D81E9F99196D7D2C00FFD46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D81E9F9A196D7D2C00FFD46B /* Build configuration list for PBXNativeTarget "youGiveLoveABadNameTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +523,7 @@
 				D81E9F9C196D7D2C00FFD46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
