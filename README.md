@@ -1,7 +1,4 @@
----
-tags: uianimation, keyframe
-languages: objc
----
+
 # You Give Love A Bad Name
 
 Lets learn about `UIKeyFrameAnimations`
