@@ -21,6 +21,7 @@
 		D81E9F92196D7D2C00FFD46B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81E9F90196D7D2C00FFD46B /* InfoPlist.strings */; };
 		D81E9F94196D7D2C00FFD46B /* youGiveLoveABadNameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81E9F93196D7D2C00FFD46B /* youGiveLoveABadNameTests.m */; };
 		D81E9F9E196D7D3900FFD46B /* bonjovi.png in Resources */ = {isa = PBXBuildFile; fileRef = D81E9F9D196D7D3900FFD46B /* bonjovi.png */; };
+		E25CA5F71BD56FDB0066FC43 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25CA5F61BD56FDB0066FC43 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D81E9F91196D7D2C00FFD46B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D81E9F93196D7D2C00FFD46B /* youGiveLoveABadNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = youGiveLoveABadNameTests.m; sourceTree = "<group>"; };
 		D81E9F9D196D7D3900FFD46B /* bonjovi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonjovi.png; sourceTree = "<group>"; };
+		E25CA5F61BD56FDB0066FC43 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				D81E9F71196D7D2C00FFD46B /* InfoPlist.strings */,
 				D81E9F74196D7D2C00FFD46B /* main.m */,
 				D81E9F76196D7D2C00FFD46B /* youGiveLoveABadName-Prefix.pch */,
+				E25CA5F61BD56FDB0066FC43 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				D81E9F81196D7D2C00FFD46B /* Images.xcassets in Resources */,
 				D81E9F9E196D7D3900FFD46B /* bonjovi.png in Resources */,
 				D81E9F73196D7D2C00FFD46B /* InfoPlist.strings in Resources */,
+				E25CA5F71BD56FDB0066FC43 /* Launch Screen.storyboard in Resources */,
 				D81E9F7C196D7D2C00FFD46B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -342,6 +346,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "youGiveLoveABadName/youGiveLoveABadName-Prefix.pch";
 				INFOPLIST_FILE = "youGiveLoveABadName/youGiveLoveABadName-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "FlatironSchool.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
