@@ -10,8 +10,12 @@
 
 @interface FISViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *bonJovi;
-@property (nonatomic) CGRect baseFrame;
 - (IBAction)expand:(id)sender;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bonJoviTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bonJoviBot;
+
+@property (nonatomic) BOOL isStretched;
 
 @end
 
@@ -20,7 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
+    self.isStretched = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,61 +36,75 @@
 
 - (IBAction)expand:(id)sender {
     
-    self.baseFrame = CGRectMake(0,197,320,174);
-    
-    UIButton *expandButton = (UIButton *)sender;
-    
-    expandButton.enabled = NO;
-    
-    void (^animationBlock)() = ^{
- 
-        if (CGRectEqualToRect(self.bonJovi.frame,self.baseFrame))
-        {
+    if(self.isStretched == NO){
+        [UIView animateKeyframesWithDuration:1 delay:0 options:0 animations:^{
             
-        CGRect miniFrame = CGRectMake(self.baseFrame.origin.x, self.baseFrame.origin.y + 10, self.baseFrame.size.width, self.baseFrame.size.height - 20);
+            // get bounce in
+            [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant += 8; // 185
+                self.bonJoviBot.constant -= 8; // -205
+                [self.view layoutIfNeeded];
+            }];
             
-        [UIView addKeyframeWithRelativeStartTime:0
-                                    relativeDuration:0.2
-                                          animations:^{
-                                              self.bonJovi.frame = miniFrame;
-                                          }];
-
-        [UIView addKeyframeWithRelativeStartTime:0.2
-                                    relativeDuration:0.6
-                                          animations:^{
-                                              self.bonJovi.frame = CGRectMake(0, -60, 320, 688);
-                                          }];
+            // get zoom out to full
+            [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant -= 185; // 0
+                self.bonJoviBot.constant += 205; // 0
+                [self.view layoutIfNeeded];
+            }];
             
-        [UIView addKeyframeWithRelativeStartTime:0.8
-                                    relativeDuration:0.2
-                                          animations:^{
-                                              self.bonJovi.frame = self.view.frame;
-                                          }];
-
+            // bounce a little bit out
+            [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant -= 20; // -20
+                self.bonJoviBot.constant += 20; //  20
+                [self.view layoutIfNeeded];
+            }];
+            
+            // return to full
+            [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant += 20; // 0
+                self.bonJoviBot.constant -= 20; // 0
+                [self.view layoutIfNeeded];
+            }];
+            
+        } completion:nil];
         
-        }
-        else {
-            [UIView addKeyframeWithRelativeStartTime:0
-                                    relativeDuration:0.5
-                                          animations:^{
-                                              self.bonJovi.frame = self.baseFrame;
-                                          }];
-        }
+        self.isStretched = YES;
+    }
+    else
+    {
+        [UIView animateKeyframesWithDuration:1 delay:0 options:0 animations:^{
             
-    
-    
-    };
-    
-    [UIView animateKeyframesWithDuration:0.4
-                                   delay:0.0
-                                 options:UIViewKeyframeAnimationOptionCalculationModeCubic |
-     UIViewAnimationOptionCurveLinear
-                              animations:animationBlock
-                              completion:^(BOOL finished) {
-                                  expandButton.enabled = YES;
-                              }];
-    
-    
-  }
-
+            // bounce a little bit out
+            [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant -= 20; // -20
+                self.bonJoviBot.constant += 20; //  20
+                [self.view layoutIfNeeded];
+            }];
+            
+            // zoom into small
+            [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant += 197; // 177 (ORIGINAL)
+                self.bonJoviBot.constant -= 217; // -197 (ORIGINAL)
+                [self.view layoutIfNeeded];
+            }];
+            
+            // bounce a little bit in
+            [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant += 8; // 185
+                self.bonJoviBot.constant -= 8; // -205
+                [self.view layoutIfNeeded];
+            }];
+            
+            // return to small
+            [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:.25 animations:^{
+                self.bonJoviTop.constant -= 8; // 177
+                self.bonJoviBot.constant += 8; // -197
+                [self.view layoutIfNeeded];
+            }];
+        } completion:nil];
+        
+        self.isStretched = NO;
+    }
+}
 @end
