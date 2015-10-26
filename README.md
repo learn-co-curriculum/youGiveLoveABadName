@@ -1,7 +1,7 @@
 
 # You Give Love A Bad Name
 
-Lets learn about `UIKeyFrameAnimations`
+Let's learn about `UIKeyFrameAnimations`
 
 ## Instructions
 
