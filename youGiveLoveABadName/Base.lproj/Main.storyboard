@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,30 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bonjovi.png" translatesAutoresizingMaskIntoConstraints="NO" id="TR2-VY-ejg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bonjovi" translatesAutoresizingMaskIntoConstraints="NO" id="TR2-VY-ejg">
                                 <rect key="frame" x="0.0" y="197" width="320" height="174"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-wJ-vCJ">
-                                <rect key="frame" x="134" y="498" width="53" height="30"/>
-                                <state key="normal" title="Expand">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-wJ-vCJ">
+                                <rect key="frame" x="130" y="488" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.50328722677595628" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jcb-yx-ZfH"/>
+                                    <constraint firstAttribute="width" constant="60" id="wor-Lr-8Mk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="⇅">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="expand:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x0D-4m-Wgn"/>
+                                    <action selector="expandButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x2D-6Y-CKu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zaR-wJ-vCJ" secondAttribute="bottom" constant="20" id="0uJ-Gk-NSP"/>
+                            <constraint firstItem="zaR-wJ-vCJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bSK-ia-aDU"/>
+                            <constraint firstAttribute="trailing" secondItem="TR2-VY-ejg" secondAttribute="trailing" id="bt7-Sw-7CL"/>
+                            <constraint firstItem="TR2-VY-ejg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ogr-Sd-zx1"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bonJovi" destination="TR2-VY-ejg" id="Wbp-Ut-2KG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="556.875" y="453.16901408450701"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bonjovi.png" width="466" height="310"/>
+        <image name="bonjovi" width="466" height="310"/>
     </resources>
 </document>

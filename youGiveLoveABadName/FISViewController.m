@@ -9,25 +9,17 @@
 #import "FISViewController.h"
 
 @interface FISViewController ()
+
 @property (strong, nonatomic) IBOutlet UIImageView *bonJovi;
-- (IBAction)expand:(id)sender;
 
 @end
 
+
 @implementation FISViewController
 
-- (void)viewDidLoad
+-(IBAction)expandButtonTapped:(id)sender
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)expand:(id)sender {
-}
 @end
