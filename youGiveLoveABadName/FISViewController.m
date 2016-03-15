@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bonJoviTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bonJoviBot;
 
+@property (nonatomic, assign) NSInteger innerBounceDistance;
+@property (nonatomic, assign) NSInteger outerBounceDistance;
+@property (nonatomic, assign) NSInteger imageTopConstant;
+@property (nonatomic, assign) NSInteger imageBottomConstant;
 @property (nonatomic) BOOL isStretched;
 
 @end
@@ -25,6 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.innerBounceDistance = 8;
+    self.outerBounceDistance = 20;
+    self.imageTopConstant = self.bonJoviTop.constant;
+    self.imageBottomConstant = -self.bonJoviBot.constant;
     self.isStretched = NO;
 }
 
@@ -41,29 +49,29 @@
             
             // get bounce in
             [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant += 8; // 185
-                self.bonJoviBot.constant -= 8; // -205
+                self.bonJoviTop.constant += self.innerBounceDistance; // 185
+                self.bonJoviBot.constant -= self.innerBounceDistance; // -205
                 [self.view layoutIfNeeded];
             }];
             
             // get zoom out to full
             [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant -= 185; // 0
-                self.bonJoviBot.constant += 205; // 0
+                self.bonJoviTop.constant -= (self.imageTopConstant + self.innerBounceDistance); // 0
+                self.bonJoviBot.constant += (self.imageBottomConstant + self.innerBounceDistance); // 0
                 [self.view layoutIfNeeded];
             }];
             
             // bounce a little bit out
             [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant -= 20; // -20
-                self.bonJoviBot.constant += 20; //  20
+                self.bonJoviTop.constant -= self.outerBounceDistance; // -20
+                self.bonJoviBot.constant += self.outerBounceDistance; //  20
                 [self.view layoutIfNeeded];
             }];
             
             // return to full
             [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant += 20; // 0
-                self.bonJoviBot.constant -= 20; // 0
+                self.bonJoviTop.constant += self.outerBounceDistance; // 0
+                self.bonJoviBot.constant -= self.outerBounceDistance; // 0
                 [self.view layoutIfNeeded];
             }];
             
@@ -77,29 +85,29 @@
             
             // bounce a little bit out
             [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant -= 20; // -20
-                self.bonJoviBot.constant += 20; //  20
+                self.bonJoviTop.constant -= self.outerBounceDistance; // -20
+                self.bonJoviBot.constant += self.outerBounceDistance; //  20
                 [self.view layoutIfNeeded];
             }];
             
             // zoom into small
             [UIView addKeyframeWithRelativeStartTime:0.25 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant += 197; // 177 (ORIGINAL)
-                self.bonJoviBot.constant -= 217; // -197 (ORIGINAL)
+                self.bonJoviTop.constant += (self.imageTopConstant + self.outerBounceDistance); // 177 (ORIGINAL)
+                self.bonJoviBot.constant -= (self.imageBottomConstant + self.outerBounceDistance); // -197 (ORIGINAL)
                 [self.view layoutIfNeeded];
             }];
             
             // bounce a little bit in
             [UIView addKeyframeWithRelativeStartTime:0.5 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant += 8; // 185
-                self.bonJoviBot.constant -= 8; // -205
+                self.bonJoviTop.constant += self.innerBounceDistance; // 185
+                self.bonJoviBot.constant -= self.innerBounceDistance; // -205
                 [self.view layoutIfNeeded];
             }];
             
             // return to small
             [UIView addKeyframeWithRelativeStartTime:0.75 relativeDuration:.25 animations:^{
-                self.bonJoviTop.constant -= 8; // 177
-                self.bonJoviBot.constant += 8; // -197
+                self.bonJoviTop.constant -= self.innerBounceDistance; // 177
+                self.bonJoviBot.constant += self.innerBounceDistance; // -197
                 [self.view layoutIfNeeded];
             }];
         } completion:nil];
